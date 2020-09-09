@@ -1,0 +1,14 @@
+@mixin font-face($font-family, $path, $weight: normal, $style: normal)
+	{
+		@font-face {
+			font-family: $font-family;
+			font-weight: $weight;
+			font-style: $style;
+			src: url('#{$path}.woff2') format('woff2'), url('#{$path}.ttf') format('truetype');
+		}
+	}
+
+	//для nectarin.ru/bitrix оставляем путь таким же
+@include font-face('DinPro-Black', '../fonts/DinPro/DinPro-Black/DinPro-Black', 800);
+@include font-face('DinPro-Bold', '../fonts/DinPro/DinPro-Bold/DinPro-Bold', 700);
+@include font-face('DinPro-Regular', '../fonts/DinPro/DinPro-Regular/DinPro-Regular', 400);
